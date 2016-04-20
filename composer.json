@@ -1,6 +1,6 @@
 {
-    "name": "bolt/bolt-extension-starter",
-    "description": "",
+    "name": "bobdenotter/bolt-backend-styleguide",
+    "description": "An extension to display the Bolt Backend Styleguide.",
     "type": "bolt-extension",
     "keywords": [
     ],
@@ -13,25 +13,30 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "",
-            "email": "you@example.com"
+            "name": "Bob den Otter",
+            "email": "bob@twokings.nl"
+        },
+        {
+            "name": "Sebastiaan Bonardt",
+            "email": "sebastiaan@twokings.nl"
         }
+
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\YourName\\ExtensionName\\": "src"
+            "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bolt\\Extension\\YourName\\ExtensionName\\Tests\\": "tests",
+            "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\Tests\\": "tests",
             "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
         }
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\YourName\\ExtensionName\\ExtensionNameExtension"
+        "bolt-class": "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\BackendStyleguideExtension"
     }
 }

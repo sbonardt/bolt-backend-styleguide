@@ -1,9 +1,9 @@
 <?php
 
-namespace Bolt\Extension\YourName\ExtensionName\Tests;
+namespace Bolt\Extension\Bobdenotter\BackendStyleguide\Tests;
 
 use Bolt\Tests\BoltUnitTest;
-use Bolt\Extension\YourName\ExtensionName\ExtensionNameExtension;
+use Bolt\Extension\Bobdenotter\BackendStyleguide\BackendStyleguideExtension;
 
 /**
  * ExtensionName testing class.
