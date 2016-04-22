@@ -1,5 +1,5 @@
 {
-    "name": "bobdenotter/bolt-backend-styleguide",
+    "name": "sbonardt/bolt-backend-styleguide",
     "description": "An extension to display the Bolt Backend Styleguide.",
     "type": "bolt-extension",
     "keywords": [
@@ -26,17 +26,17 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\": "src"
+            "Bolt\\Extension\\Sbonardt\\BackendStyleguide\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\Tests\\": "tests",
+            "Bolt\\Extension\\Sbonardt\\BackendStyleguide\\Tests\\": "tests",
             "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
         }
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\Bobdenotter\\BackendStyleguide\\BackendStyleguideExtension"
+        "bolt-class": "Bolt\\Extension\\Sbonardt\\BackendStyleguide\\BackendStyleguideExtension"
     }
 }

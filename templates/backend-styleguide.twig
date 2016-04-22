@@ -6,8 +6,8 @@
 
 {% block page_subtitle __('Sophisticated, lightweight & simple CMS') %}
 
-
 {% block page_main %}
+<link href="{{ app.paths.extensions ~ 'local/sbonardt/bolt-backend-styleguide/css/backend-styleguide.css' }}" rel="stylesheet" property="stylesheet">
 
 <div class="row">
     <div class="col-xs-12">
@@ -75,20 +75,19 @@
                 </li>
                 <li><a href="#sg-patterns-bolt">Patterns specific for Bolt</a>
                     <ul>
-                        <li><a href="#sg-patterns-tables-bolt">TODO - Tables</a>
+                        <li><a href="#sg-patterns-tables-bolt">Tables</a>
                             <ul>
-                                <li>TODO Table - dashboardlisting</li>
-                                <li>TODO Table - dashboardlisting table-striped</li>
-                                <li>TODO Table - table responsive header</li>
+                                <li>Table - dashboardlisting table</li>
+                                <li>Table - Grouped listing table</li>
                             </ul>
                         </li>
-                        <li><a href="#sg-patterns-panel-bolt">TODO Panel</a>
+                        <li><a href="#sg-patterns-panels-bolt">Panel</a>
                             <ul>
-                                <li>TODO - Panel general</li>
-                                <li>TODO - Panel Progress bar</li>
+                                <li>Panel - default panel</li>
+                                <li>Panel - progress bar panel</li>
                             </ul>
                         </li>
-                        <li><a href="#sg-patterns-alerts-bolt">TODO - Alerts and warnings</a></li>
+                        <li><a href="#sg-patterns-alerts-bolt">Alerts and warnings</a></li>
                         <li><a href="#sg-patterns-navtabs-bolt">TODO - Nav tabs - above editcontent</a></li>
                         <li><a href="#sg-patterns-editcontent-bolt">TODO - Editcontent form contenttype</a></li>
                         <li><a href="#sg-patterns-editcontent-bolt">TODO - Pager</a></li>
@@ -1514,32 +1513,746 @@
 <div class="sg-pattern-styles" id="sg-patterns-bolt">
 
     <h1 class="page-header">Patterns<small> - Design and mark-up patterns unique to Bolt backend.</small></h1>
+
     <div class="sg-markup sg-section">
         <div class="sg-display">
-            <h2 class="sg-h2"><a id="sg-alerts" class="sg-anchor">alerts</a></h2>
-            <div class="row" data-xrayhtml="flip">
-                <div class="col-md-8">
-                    <h3 class="sg-h3">Example</h3>
-                    <!-- Sample pattern, your site's patterns will be different -->
-                    <div class="alert alert-warning">
-                        <strong>Warning Message!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            <h2 class="sg-h2"><a id="sg-patterns-tables-bolt" class="sg-anchor">Tables</a></h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Dashboarlisting table</h3>
+                    <div data-xrayhtml="flip">
+                        <div class="buic-listing">
+                            <table class="table dashboardlisting listing">
+                                <tbody class="striping_odd">
+                                    <tr id="item_5">
+                                        <td></td>
+                                        <td class="id hidden-xs">№ 5</td>
+                                        <td class="excerpt ">
+                                            <span>
+                                                <strong class="visible-xs">№ 5. </strong>
+                                                <strong>
+                                                    <a title="Slug: scrupulum-inquam-abeunti" href="/bolt/editcontent/pages/5">
+                                                        Scrupulum, inquam, abeunti
+                                                    </a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age nunc isti doceant, vel tu potius quis enim ista melius?  Cum praesertim illa perdiscere ludus esset.   Laboro autem non sine causa;  Duo Reges: constructio interrete.  Sed quid sentiat, non vi…
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: analog-camera-photography-vintage-1844.jpg" class="magnific" href="/thumbs/1000x800r/analog-camera-photography-vintage-1844.jpg">
+                                                <img width="54" height="41" alt="Thumbnail" src="/thumbs/54x41c/analog-camera-photography-vintage-1844.jpg">
+                                            </a>
+                                        </td>
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/5" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/scrupulum-inquam-abeunti">
+                                                            <i class="fa fa-external-link-square"></i> View on site
+                                                        </a>
+                                                    </li>
+
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/5?duplicate=1">
+                                                            <i class="fa fa-copy"></i> Duplicate Page
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="scrupulum-inquam-abeunti">scrupulum-inquam-abeunti</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2015-09-04 06:11</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="item_4">
+                                        <td></td>
+                                        <td class="id hidden-xs">№ 4</td>
+                                        <td class="excerpt ">
+                                            <span>
+                                                <strong class="visible-xs">№ 4. </strong>
+                                                <strong>
+                                                    <a title="Slug: cave-putes-quicquam-esse-verius" href="/bolt/editcontent/pages/4">
+                                                        Cave putes quicquam esse verius
+                                                    </a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Levatio igitur vitiorum magna fit in iis, qui habent ad virtutem progressionis aliquantum. Venit enim mihi Platonis in mentem, quem accepimus primum hic disputare solitum;  Ecce aliud simile …
+                                            </span>
+                                        </td>
+                                        <td class="listthumb">
+                                            <a title="Image: architecture-books-building-2757.jpg" class="magnific" href="/thumbs/1000x800r/architecture-books-building-2757.jpg">
+                                                <img width="54" height="41" alt="Thumbnail" src="/thumbs/54x41c/architecture-books-building-2757.jpg">
+                                            </a>
+                                        </td>
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/4" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/cave-putes-quicquam-esse-verius"><i class="fa fa-external-link-square"></i> View on site</a>
+                                                    </li>
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/4?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="cave-putes-quicquam-esse-verius">cave-putes-quicquam-ess…</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2015-09-28 16:06</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="item_3">
+                                        <td></td>
+                                        <td class="id hidden-xs">№ 3</td>
+                                        <td class="excerpt ">
+                                            <span>
+                                                <strong class="visible-xs">№ 3. </strong>
+                                                <strong>
+                                                    <a title="Slug: quid-me-istud-rogas" href="/bolt/editcontent/pages/3">
+                                                        Quid me istud rogas?
+                                                    </a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Paria sunt igitur.  Dolere malum est: in crucem qui agitur, beatus esse non potest. Summum ením bonum exposuit vacuitatem doloris; Duo Reges: constructio interrete.    Lorem ipsum dolor sit amet, conse…
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: blur-flowers-home-1093.jpg" class="magnific" href="/thumbs/1000x800r/blur-flowers-home-1093.jpg">
+                                                <img width="54" height="41" alt="Thumbnail" src="/thumbs/54x41c/blur-flowers-home-1093.jpg">
+                                            </a>
+                                        </td>
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/3" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/quid-me-istud-rogas"><i class="fa fa-external-link-square"></i> View on site</a>
+                                                    </li>
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/3?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="quid-me-istud-rogas">quid-me-istud-rogas</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2016-03-06 17:31</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="item_2">
+                                        <td></td>
+                                        <td class="id hidden-xs">№ 2</td>
+                                        <td class="excerpt ">
+                                            <span>
+                                                <strong class="visible-xs">№ 2. </strong>
+                                                <strong>
+                                                    <a title="Slug: memini-vero-inquam" href="/bolt/editcontent/pages/2">Memini vero, inquam</a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eadem nunc mea adversum te oratio est. Sed quid ages tandem, si utilitas ab amicitia, ut fit saepe, defecerit? Duo enim genera quae erant, fecit tria. Non quam nostram quidem, inquit Pomponius iocans;   …
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: garden-gardening-grass-589.jpg" class="magnific" href="/thumbs/1000x800r/garden-gardening-grass-589.jpg">
+                                                <img width="54" height="41" alt="Thumbnail" src="/thumbs/54x41c/garden-gardening-grass-589.jpg">
+                                            </a>
+                                        </td>
+
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/2" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/memini-vero-inquam"><i class="fa fa-external-link-square"></i> View on site</a>
+                                                    </li>
+
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/2?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:
+                                                            <code title="memini-vero-inquam">memini-vero-inquam</code>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2015-11-26 14:43</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="item_1">
+                                        <td></td>
+                                        <td class="id hidden-xs">№ 1</td>
+                                        <td class="excerpt ">
+                                            <span>
+                                                <strong class="visible-xs">№ 1. </strong>
+                                                <strong>
+                                                    <a title="Slug: res-enim-concurrent-contrariae" href="/bolt/editcontent/pages/1">
+                                                        Res enim concurrent contrariae
+                                                    </a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Suam denique cuique naturam esse ad vivendum ducem. An est aliquid per se ipsum flagitiosum, etiamsi nulla comitetur infamia? Duo Reges: constr…
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: alarm-clock-gold-hands-of-a-clock-1778.jpg" class="magnific" href="/thumbs/1000x800r/alarm-clock-gold-hands-of-a-clock-1778.jpg">
+                                                <img width="54" height="41" alt="Thumbnail" src="/thumbs/54x41c/alarm-clock-gold-hands-of-a-clock-1778.jpg">
+                                            </a>
+                                        </td>
+
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/1" class="btn btn-default btn-xs">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/res-enim-concurrent-contrariae">
+                                                            <i class="fa fa-external-link-square"></i> View on site
+                                                        </a>
+                                                    </li>
+
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/1?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="res-enim-concurrent-contrariae">res-enim-concurrent-con…</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2016-03-16 07:23</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> <!-- /buic-listing -->
                     </div>
 
-                    <div class="alert alert-error">
-                        <strong>Error Message!</strong> Numquam quos fuga quam suscipit sapiente perferendis magnam. 
-                    </div>
+                    <h3>Grouped (dashboard)listing table</h3>
+                    <div data-xrayhtml="flip">
+                        <div data-bolt_csrf_token="r2MijBeWLhb-j0bPwuky84wzg62mzjKO6S55mOyHuY8" data-contenttype-name="Page" data-contenttype="pages" class="buic-listing">
+                            <table class="dashboardlisting listing">
+                                <tbody class="sortable striping_even ui-sortable">
+                                    <tr class="heading">
+                                        <th colspan="6">
+                                            The main group
+                                        </th>
+                                    </tr>
 
-                    <div class="alert alert-success">
-                        <strong>Success Message!</strong> Totam officiis dolorum voluptatibus maxime molestiae iste.
-                    </div>
+                                    <tr class="header">
+                                        <th class="menu hidden-xs">
+                                            <div class="btn-group">
+                                                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" class="btn btn-default btn-xs dropdown-toggle">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li class="select-all"><a href="#">Select all</a></li>
+                                                    <li class="hidden select-none"><a href="#">Select none</a></li>
+                                                    <li role="separator" class="hidden divider"></li>
+                                                    <li class="hidden dropdown-header">Selection (#):</li>
+                                                    <li class="hidden"><a href="#">• Delete</a></li>
+                                                    <li class="hidden disabled"><a href="#">• Publish</a></li>
+                                                    <li class="hidden disabled"><a href="#">• Depublish</a></li>
+                                                </ul>
+                                            </div>
+                                        </th>
 
-                    <div class="alert alert-info">
-                        <strong>Info Message!</strong> Consequatur facere deleniti cumque ducimus maiores nemo.
+                                        <th class="hidden-xs">    
+                                            <a class="order-none" href="?order=id">Id</a>
+                                        </th>
+
+                                        <th style="width:80%">    
+                                            <a class="order-none" href="?order=title">Title / Excerpt</a>
+                                        </th>
+
+                                        <th class="listthumb"></th>
+
+                                        <th class="username hidden-sm hidden-xs">
+                                            <a class="order-none" href="?order=datecreated">Meta</a>
+                                        </th>
+
+                                        <th class="hidden-xs">Actions</th>
+                                    </tr>
+
+                                    <tr id="item_4">
+
+                                        <td class="check hidden-xs"><input type="checkbox" name="checkRow"></td>
+
+                                        <td class="id hidden-xs">№ 4</td>
+
+                                        <td class="excerpt large">
+                                            <span>
+                                                <strong class="visible-xs">№ 4. </strong>
+                                                <strong><a title="Slug: cave-putes-quicquam-esse-verius" href="/bolt/editcontent/pages/4">Cave putes quicquam esse verius</a></strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Levatio igitur vitiorum magna fit in iis, qui habent ad virtutem progressionis aliquantum. Venit enim mihi Platonis in mentem, quem accepimus primum hic disputare solitum;  Ecce aliud simile dissimile.  Itaque hic ipse iam pridem est reiectus; Summus dolor plures dies manere non potest? Ind…
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: architecture-books-building-2757.jpg" class="magnific" href="/thumbs/1000x800r/architecture-books-building-2757.jpg">
+                                                <img width="80" height="60" alt="Thumbnail" src="/thumbs/80x60c/architecture-books-building-2757.jpg">
+                                            </a>
+                                        </td>
+
+                                        <td class="username hidden-sm hidden-xs">
+                                            <i class="fa fa-user fa-fw"></i>
+                                            admin
+                                            <br>
+                                            <i class="fa fa-circle status-published fa-fw"></i> 28/09/15<br>
+                                            <i class="fa fa-align-left fa-fw"></i>
+                                            <a href="/bolt/editcontent/pages/4#taxonomy">Order: 0</a>
+                                        </td>
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/4" class="btn btn-default btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/cave-putes-quicquam-esse-verius"><i class="fa fa-external-link-square"></i> View on site</a>
+                                                    </li>
+
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/4?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="cave-putes-quicquam-esse-verius">cave-putes-quicquam-ess…</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2015-09-28 16:06</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Group:<i class="fa fa-tag"></i> The main group</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr class="selectiontoolbar hidden" style="">
+                                        <td colspan="6">
+                                            <i class="fa fa-fw fa-rotate-270 fa-mail-forward"></i><div class="count">0</div>
+                                            <button class="danger separator" data-stb-cmd="record:delete" type="button"><i class="fa fa-trash"></i> Delete</button>
+                                            <button data-stb-cmd="record:publish" type="button"><i class="fa fa-circle status-published"></i> Publish</button>
+                                            <button data-stb-cmd="record:depublish" type="button"><i class="fa fa-circle status-held"></i> Depublish</button>
+                                            <button data-stb-cmd="record:draft" type="button"><i class="fa fa-circle status-draft"></i> Draft</button>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                
+                                <tbody class="sortable striping_even ui-sortable">
+                                    <tr class="heading">
+                                        <th colspan="6">
+                                            The other stuff
+                                        </th>
+                                    </tr>
+                                    <tr class="header">
+                                        <th class="menu hidden-xs">
+                                            <div class="btn-group">
+                                                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" class="btn btn-default btn-xs dropdown-toggle">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li class="select-all"><a href="#">Select all</a></li>
+                                                    <li class="hidden select-none"><a href="#">Select none</a></li>
+                                                    <li role="separator" class="hidden divider"></li>
+                                                    <li class="hidden dropdown-header">Selection (#):</li>
+                                                    <li class="hidden"><a href="#">• Delete</a></li>
+                                                    <li class="hidden disabled"><a href="#">• Publish</a></li>
+                                                    <li class="hidden disabled"><a href="#">• Depublish</a></li>
+                                                </ul>
+                                            </div>
+                                        </th>
+
+                                        <th class="hidden-xs">    
+
+
+                                            <a class="order-none" href="?order=id">Id</a>
+                                        </th>
+
+                                        <th style="width:80%">    
+
+                                            <a class="order-none" href="?order=title">Title / Excerpt</a>
+                                        </th>
+
+                                        <th class="listthumb"></th>
+
+                                        <th class="username hidden-sm hidden-xs">    
+
+
+                                            <a class="order-none" href="?order=datecreated">Meta</a>
+                                        </th>
+
+                                        <th class="hidden-xs">Actions</th>
+                                    </tr>
+
+                                    <tr id="item_5">
+
+                                        <td class="check hidden-xs"><input type="checkbox" name="checkRow"></td>
+                                        <td class="id hidden-xs">№ 5</td>
+                                        <td class="excerpt large">
+                                            <span>
+                                                <strong class="visible-xs">№ 5. </strong>
+                                                <strong>
+                                                    <a title="Slug: scrupulum-inquam-abeunti" href="/bolt/editcontent/pages/5">Scrupulum, inquam, abeunti</a>
+                                                </strong>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age nunc isti doceant, vel tu potius quis enim ista melius?  Cum praesertim illa perdiscere ludus esset.   Laboro autem non sine causa;  Duo Reges: constructio interrete.  Sed quid sentiat, non videtis.   Non laboro, inquit, de nomine.   Primum quid tu dicis breve?     Lorem ipsum dolor sit amet…
+                                            </span>
+                                        </td>
+
+                                        <td class="listthumb">
+                                            <a title="Image: analog-camera-photography-vintage-1844.jpg" class="magnific" href="/thumbs/1000x800r/analog-camera-photography-vintage-1844.jpg">
+                                                <img width="80" height="60" alt="Thumbnail" src="/thumbs/80x60c/analog-camera-photography-vintage-1844.jpg">
+                                            </a>
+                                        </td>
+
+                                        <td class="username hidden-sm hidden-xs">
+                                            <i class="fa fa-user fa-fw"></i>admin<br>
+                                            <i class="fa fa-circle status-published fa-fw"></i> 04/09/15<br>
+                                            <i class="fa fa-align-left fa-fw"></i>
+                                            <a href="/bolt/editcontent/pages/5#taxonomy">Order: 0</a>
+                                        </td>
+
+                                        <td class="actions hidden-xs">
+                                            <div class="btn-group">
+                                                <a href="/bolt/editcontent/pages/5" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-xs" type="button">
+                                                    <i class="fa fa-info-sign"></i> <span class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a target="_blank" href="/page/scrupulum-inquam-abeunti"><i class="fa fa-external-link-square"></i> View on site</a>
+                                                    </li>
+
+                                                    <li>                    
+                                                        <a data-listing-cmd="record:depublish" href="#"><i class="fa fa-circle status-held"></i> Change status to 'held'</a>
+                                                    </li>
+                                                    <li>        
+                                                        <a data-listing-cmd="record:draft" href="#"><i class="fa fa-circle status-draft"></i> Change status to 'draft'</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="/bolt/editcontent/pages/5?duplicate=1"><i class="fa fa-copy"></i> Duplicate Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-listing-cmd="record:delete" href="#"><i class="fa fa-trash"></i> Delete Page</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a class="nolink">Author: <strong><i class="fa fa-user"></i>admin</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Current status:<strong>published</strong></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Slug:<code title="scrupulum-inquam-abeunti">scrupulum-inquam-abeunti</code></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Created on:<i class="fa fa-asterisk"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Published on:<i class="fa fa-calendar"></i> 2015-09-04 06:11</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Last edited on:<i class="fa fa-refresh"></i> 2016-04-22 09:32</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nolink">Group:<i class="fa fa-tag"></i> The other stuff</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="selectiontoolbar hidden" style="">
+                                        <td colspan="6">
+                                            <i class="fa fa-fw fa-rotate-270 fa-mail-forward"></i>
+                                            <div class="count">0</div>
+                                            <button class="danger separator" data-stb-cmd="record:delete" type="button"><i class="fa fa-trash"></i> Delete</button>
+                                            <button data-stb-cmd="record:publish" type="button"><i class="fa fa-circle status-published"></i> Publish</button>
+                                            <button data-stb-cmd="record:depublish" type="button"><i class="fa fa-circle status-held"></i> Depublish</button>
+                                            <button data-stb-cmd="record:draft" type="button"><i class="fa fa-circle status-draft"></i> Draft</button>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <div class="sg-markup sg-section">
+        <div class="sg-display">
+            <h2 class="sg-h2"><a id="sg-patterns-panels-bolt" class="sg-anchor">Panels</a></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Panel - default panel</h3>
+                    <div data-xrayhtml="flip">
+                        <div class="panel panel-default panel-activity">
+                            <div class="panel-heading">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                Latest changes
+                            </div>
+
+                            <div class="panel-body">
+                                <ul class="activity">
+                                </ul>
+                                <p>
+                                    <a class="btn btn-default" href="/bolt/changelog">
+                                        <i class="fa fa-fw fa-archive"></i>
+                                        more activity
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Panel - progress bar panel</h3>
+                    <div data-xrayhtml="flip">
+                        <div class="panel panel-default panel-configuration">
+                            <div style="width: 100%; text-align: left; color: #333; padding: 10px 14px; margin-bottom: 15px;" class="progress-bar progress-bar-info progress-bar-striped active">
+                                <i class="fa fa-fw fa-bullhorn"></i><b>Configuration Notices</b>    
+                            </div>
+
+                            <div class="panel-body">
+                                <p>
+                                    Bolt has detected one or more configuration issues. You should resolve these, for optimum performance:
+                                </p>
+                                <ul>
+                                    <li>The mail configuration parameters have not been set up. This may interfere with password resets, and extension functionality. Please set up the 'mailoptions' in <a href="/bolt/file/edit/config/config.yml">config.yml</a>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="sg-markup sg-section">
+        <div class="sg-display">
+            <h2 class="sg-h2"><a id="sg-patterns-alerts-bolt" class="sg-anchor">Alerts</a></h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-xrayhtml="flip">
+                        <div role="alert" class="alert alert-success"><strong>Great succes alert! </strong>alert information</div>
+                        <div role="alert" class="alert alert-danger"><strong>Danger alert! </strong>alert information</div>
+                        <div role="alert" class="alert alert-warning"><strong>Warning alert! </strong>alert information</div>
+                        <div role="alert" class="alert alert-info"><strong>Informational alert! </strong>alert information</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {# <div class="sg-markup sg-section">
         <div class="sg-display">
@@ -1557,582 +2270,6 @@
         </div>
     </div> #}
 
-    <div class="sg-markup sg-section">
-        <div class="sg-display">
-            <h2 class="sg-h2"><a id="sg-buttons-advanced" class="sg-anchor">Buttons advanced</a></h2>
-            <div class="row">
-                <div class="col-md-8">
-                    <h3 class="sg-h3">Example</h3>
-                    <h4>Button Groups</h4><!--sizes-->
-                    <div class="btn-toolbar" role="toolbar">
-                        <div class="btn-group btn-group-lg">
-                            <button type="button" class="btn btn-default">Left</button>
-                            <button type="button" class="btn btn-default">Middle</button>
-                            <button type="button" class="btn btn-default">Right</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">Left</button>
-                                <button type="button" class="btn btn-default">Middle</button>
-                                <button type="button" class="btn btn-default">Right</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-default">Left</button>
-                                <button type="button" class="btn btn-default">Middle</button>
-                                <button type="button" class="btn btn-default">Right</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group btn-group-xs">
-                                <button type="button" class="btn btn-default">Left</button>
-                                <button type="button" class="btn btn-default">Middle</button>
-                                <button type="button" class="btn btn-default">Right</button>
-                            </div>
-                        </div>
-                    </div><!--with dropdown-->
-
-                    <h4>With Dropdown</h4>
-
-                    <div class="col-md-12">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default">1</button>
-                            <button type="button" class="btn btn-default">2</button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Dropdown</button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Dropdown link</a></li>
-                                    <li><a href="#">Dropdown link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!--vertical-->
-
-                    <h4>Vertical</h4>
-
-                    <div class="col-md-12">
-                        <div class="btn-group-vertical">
-                            <button type="button" class="btn btn-default">Button</button>
-                            <button type="button" class="btn btn-default">Button</button>
-
-                            <div class="btn-group">
-                                <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Dropdown</button>
-
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop1">
-                                    <li><a href="#">Dropdown link</a></li>
-
-                                    <li><a href="#">Dropdown link</a></li>
-                                </ul>
-                            </div>
-                            <button type="button" class="btn btn-default">Button</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <!--justified-->
-
-                        <h4>Justified</h4>
-
-                        <div class="btn-group btn-group-justified">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">Left</button>
-                            </div>
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">Middle</button>
-                            </div>
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">Right</button>
-                            </div>
-                        </div>
-
-                        <h4>Dropdown buttons</h4>
-
-                        <div class="col-md-12">
-                            <!-- Split button -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Primary</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-silent-danger dropdown-toggle" data-toggle="dropdown">Danger</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-                        </div>
-
-                        <div class="col-md-12">
-                            <!-- Split button -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-external-link-square"></i>Default</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-external-link-square"></i>
-                                    Primary</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><i class="fa fa-external-link-square"></i>
-                                    Warning</button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-external-link-square"></i>
-                                    Danger</button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-silent-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-external-link-square"></i>
-                                    Danger</button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-                        </div>
-
-                        <div class="col-md-12">
-                            <!--split-->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">Default</button>
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary">Primary</button>
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <span class="sr-only">Toggle Dropdown</span><span class="caret"></span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-success">Success</button> 
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-info"><i class="fa fa-external-link-square"></i>Info</button>
-                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning">Warning</button>
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger">Danger</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-silent-danger">Danger</button>
-                                <button type="button" class="btn btn-silent-danger dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-                        </div>
-
-                        <div class="col-md-12">
-                            <!--split-->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">
-                                    <i class="fa fa-external-link-square"></i>
-                                    Default
-                                </button>
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary">
-                                    <i class="fa fa-external-link-square"></i>
-                                    Primary
-                                </button>
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <span class="sr-only">Toggle Dropdown</span><span class="caret"></span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-success">Success</button> 
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            {# <div class="btn-group">
-                                <button type="button" class="btn btn-info"><i class="fa fa-external-link-square"></i>Info</button>
-                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group --> #}
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning">
-                                    <i class="fa fa-external-link-square"></i>
-                                    Warning
-                                </button>
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger">
-                                    <i class="fa fa-external-link-square"></i>
-                                    Default
-                                </button>
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-silent-danger">Danger</button>
-                                <button type="button" class="btn btn-silent-danger dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-
-                                    <li><a href="#">Another action</a></li>
-
-                                    <li><a href="#">Something else here</a></li>
-
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div><!-- /btn-group -->
-                        </div>
-
-
-
-                        <div class="col-md-12">
-                            <!-- Large button group -->
-
-                            <div class="btn-group">
-                                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Large button</button>
-
-                                <div style="margin-left: 2em" class="dropdown-menu">
-                                    ...
-                                </div>
-                            </div><!-- Small button group -->
-
-                            <div class="btn-group">
-                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Small button</button>
-
-                                <div style="margin-left: 2em" class="dropdown-menu">
-                                    ...
-                                </div>
-                            </div><!-- Extra small button group -->
-
-                            <div class="btn-group">
-                                <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Extra small button</button>
-
-                                <div style="margin-left: 2em" class="dropdown-menu">
-                                    ...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="sg-markup sg-section">
         <div class="sg-display">
@@ -3742,7 +3879,6 @@
 
 {% endblock page_main %}
 
-
 {% block page_script %}
-    <script src="/app/view/js/locale/xrayhtml/xrayhtml.min.js"></script>
+    <script src="/extensions/local/sbonardt/bolt-backend-styleguide/js/vendor/xrayhtml/xrayhtml.min.js"></script>
 {% endblock page_script %}

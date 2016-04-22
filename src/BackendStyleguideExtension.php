@@ -1,20 +1,19 @@
 <?php
 
-namespace Bolt\Extension\Bobdenotter\BackendStyleguide;
+namespace Bolt\Extension\Sbonardt\BackendStyleguide;
 
 use Bolt\Extension\SimpleExtension;
 use Bolt\Menu\MenuEntry;
 use Silex\ControllerCollection;
 
 /**
- * Backen Styleguide Extension class.
+ * Backend Styleguide Extension class.
  *
  * @author Bob den Otter <bob@twokings.nl>
  */
+
 class BackendStyleguideExtension extends SimpleExtension
 {
-
-
     protected function registerMenuEntries()
     {
         $menu = new MenuEntry('backend-styleguide', 'styleguide');
@@ -27,7 +26,6 @@ class BackendStyleguideExtension extends SimpleExtension
             $menu,
         ];
     }
-
 
     protected function registerBackendRoutes(ControllerCollection $collection)
     {
@@ -42,5 +40,4 @@ class BackendStyleguideExtension extends SimpleExtension
         ];
         return $this->renderTemplate('backend-styleguide.twig', $context);
     }
-
 }

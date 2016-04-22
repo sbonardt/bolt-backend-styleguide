@@ -1,0 +1,322 @@
+/*! X-rayHTML - v2.0.2 - 2016-01-22
+* https://github.com/filamentgroup/x-rayhtml
+* Copyright (c) 2016 ; Licensed MIT */
+/**
+ * This _base.scss file (should) only contain variables, mixins and helpers
+ * Read the README.TXT in main SASS folder for project details
+ */
+/**
+ * Colour scheme, copied from colors.scss.
+ */
+/**
+ * Colors in _base.scss.
+ */
+/**
+ * Fonts.
+ */
+/**
+ * New media query approach.
+ *
+ * Breakpoints
+ */
+/**
+ * Media Query handling.
+ */
+/*! X-rayHTML - v2.0.2 - 2016-01-22
+* https://github.com/filamentgroup/x-rayhtml
+* Copyright (c) 2016 ; Licensed MIT */
+.xrayhtml {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .3em;
+  margin: 1.5em 0 2.5em 0;
+  padding: 1em 1em 2em; }
+
+.xrayhtml .xraytitle {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font: .75em sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  top: -2.166666667em;
+  /* 26px */
+  padding-left: .1em;
+  padding-right: .1em;
+  z-index: 3;
+  margin: 0; }
+
+.xrayhtml.method-flip:before {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+.xrayhtml .source-panel {
+  background: #f7f7f7;
+  margin-top: 2em;
+  tab-size: 2; }
+
+.xrayhtml .source-panel pre {
+  margin: 0; }
+
+.xrayhtml .source-panel code {
+  white-space: pre-wrap; }
+
+.xrayhtml.method-flip .source-panel {
+  margin-top: 0;
+  border-radius: 0.3em; }
+
+.xrayhtml.method-inline .source-panel {
+  margin: 2em -1em -2em -1em !important;
+  /* Prism style override. */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 .3em .3em; }
+
+.xrayhtml pre {
+  padding: 16px;
+  margin: 0 !important;
+  /* Prism style override. */
+  border-radius: 0 0 .3em .3em; }
+
+.xrayhtml code {
+  white-space: pre-wrap !important;
+  /* Prism style override. */ }
+
+.xrayhtml.antipattern {
+  border-color: #C9282D; }
+
+.xrayhtml.antipattern .xraytitle {
+  color: #d75e72;
+  font-weight: 700; }
+
+/* Flip Animation */
+.method-flip {
+  -webkit-perspective: 2500px;
+  -moz-perspective: 2500px;
+  perspective: 2500px; }
+
+.method-flip .snippet {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  min-height: 100%; }
+
+.method-flip .source-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll; }
+
+.method-flip .snippet {
+  -webkit-transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-transform: rotateY(0deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  -moz-transition: -moz-transform .4s ease-in-out; }
+
+.method-flip.view-source .snippet {
+  z-index: 1;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg); }
+
+.method-flip .source-panel {
+  -webkit-transform: rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+  -moz-transform: rotateY(-180deg);
+  -moz-backface-visibility: hidden;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out; }
+
+.method-flip.view-source .source-panel {
+  z-index: 2;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg); }
+
+.method-flip.view-source .xraytitle {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, transparent, transparent 40%, #ffffff 40%, transparent); }
+
+.color_boltblue {
+  background-color: #204460; }
+
+.color_boltbluedarker {
+  background-color: #1a364d; }
+
+.color_boltbluelighter {
+  background-color: #265273; }
+
+.color_basebgcolor {
+  background-color: #FDFDFA; }
+
+.color_bodytextcolour {
+  background-color: #333; }
+
+.color_lightgrey {
+  background-color: #CCC; }
+
+.color_light-border {
+  background-color: #E8E8E8; }
+
+.color_hr-border {
+  background-color: #CCC; }
+
+.color_linkmain {
+  background-color: #005394; }
+
+.color_linkvisited {
+  background-color: #005394; }
+
+.color_linkactive {
+  background-color: #0065b3; }
+
+.color_btn-default-color {
+  background-color: #666; }
+
+.color_btn-default-bg {
+  background-color: #E0E0E0; }
+
+.color_btn-default-border {
+  background-color: #d6d6d6; }
+
+.color_btn-danger-color {
+  background-color: #FFF; }
+
+.color_btn-danger-bg {
+  background-color: #AA1010; }
+
+.color_btn-danger-border {
+  background-color: #970e0e; }
+
+.color_btn-bolt-color {
+  background-color: #FFF; }
+
+.color_btn-bolt-bg {
+  background-color: #204460; }
+
+.color_btn-bolt-border {
+  background-color: #183449; }
+
+.color_btn-silent-danger-color {
+  background-color: #555; }
+
+.color_btn-silent-danger-bg {
+  background-color: #F8F8F8; }
+
+.color_btn-silent-danger-border {
+  background-color: #970e0e; }
+
+.color_btn-primary-color {
+  background-color: #FFF; }
+
+.color_btn-primary-bg {
+  background-color: #5d9f11; }
+
+.color_btn-primary-border {
+  background-color: #528d0f; }
+
+.color_btn-secondary-bg {
+  background-color: #2A78CB; }
+
+.color_btn-secondary-border {
+  background-color: #276eba; }
+
+.color_btn-tertiary-bg {
+  background-color: #7e94a5; }
+
+.color_btn-tertiary-border {
+  background-color: #728a9d; }
+
+.color_dropdown-link-color {
+  background-color: #555; }
+
+.color_dropdown-link-hover-color {
+  background-color: #1a364d; }
+
+.color_dropdown-link-hover-bg {
+  background-color: #DDD; }
+
+.color_panel-default-heading-bg {
+  background-color: #DDD; }
+
+.color_panel-default-border {
+  background-color: #E8E8E8; }
+
+.color_table-border-color {
+  background-color: #CCC; }
+
+.color_table-bg-accent {
+  background-color: #F6F6F9; }
+
+.color_pagination-color {
+  background-color: #43515b; }
+
+.color_pagination-active-bg {
+  background-color: #43515b; }
+
+.color_pagination-active-border {
+  background-color: #3d4952; }
+
+.color_nav-tabs-border-color {
+  background-color: #7e94a5; }
+
+.color_nav-tabs-active-link-hover-border-color {
+  background-color: #7e94a5; }
+
+.color_nav-tabs-bg {
+  background-color: #b3c1cc; }
+
+.color_filtertabs {
+  background-color: #d7dde1; }
+
+.color_filtertab-color {
+  background-color: #657987; }
+
+.color_filtertab-active-color {
+  background-color: #555; }
+
+.color_sidebarbackground {
+  background-color: #33363E; }
+
+.color_sidebartextcolour {
+  background-color: #DDD; }
+
+.color_sidebartextcolourcollapsed {
+  background-color: #AAA; }
+
+.color_sidebarlink {
+  background-color: #CCC; }
+
+.color_sidebarlinkhover {
+  background-color: #FFF; }
+
+.color_sidebarlinkactive {
+  background-color: #FFF; }
+
+.color_sidebarbackgroundactive {
+  background-color: #42627b; }
+
+.color_sidebarbackgroundhover {
+  background-color: #3f515f; }
+
+.color-swatch {
+  width: 100px;
+  height: 1.25em;
+  display: inline-block;
+  margin-right: 1em;
+  box-shadow: 1px 1px 3px #ccc; }
+
+.sg-color {
+  margin-bottom: 0.25rem; }
+
+.sg-section {
+  margin-bottom: 5rem; }
+
+#sg-patterns-bolt {
+  padding-top: 4rem; }

@@ -1,0 +1,248 @@
+/*! X-rayHTML - v2.0.2 - 2016-01-22
+* https://github.com/filamentgroup/x-rayhtml
+* Copyright (c) 2016 ; Licensed MIT */
+
+// Colors from base
+// import the bolt _base.scss with (color) variables
+@import "../../../../../app/src/sass/_base.scss";
+
+@import "modules/_xrayhtml.scss";
+
+//define colour classes to use in styleguide color section. These
+// colours are an inventory of present colours in the Bolt backend
+// as of january 2016. WIP: these need to be merged and trimmed
+.color_boltblue {
+	background-color: $boltblue;
+}
+
+.color_boltbluedarker {
+	background-color: $boltbluedarker;
+}
+
+.color_boltbluelighter {
+	background-color: $boltbluelighter;
+}
+
+.color_basebgcolor {
+	background-color: $basebgcolour;
+}
+
+.color_bodytextcolour {
+	background-color: $bodytextcolour;
+}
+
+.color_lightgrey {
+	background-color: $lightgrey;
+}
+
+.color_light-border {
+	background-color: $light-border;
+}
+
+.color_hr-border {
+	background-color: $hr-border;
+}
+
+.color_linkmain {
+	background-color: $linkmain;
+}
+
+.color_linkvisited {
+	background-color: $linkvisited;
+}
+
+.color_linkactive {
+	background-color: $linkactive;
+}
+
+.color_btn-default-color {
+	background-color: $btn-default-color;
+}
+
+.color_btn-default-bg {
+	background-color: $btn-default-bg;
+}
+
+.color_btn-default-border {
+	background-color: $btn-default-border;
+}
+
+.color_btn-danger-color {
+	background-color: $btn-danger-color;
+}
+
+.color_btn-danger-bg {
+	background-color: $btn-danger-bg;
+}
+
+.color_btn-danger-border {
+	background-color: $btn-danger-border;
+}
+
+.color_btn-bolt-color {
+	background-color: $btn-bolt-color;
+}
+
+.color_btn-bolt-bg {
+	background-color: $btn-bolt-bg;
+}
+
+.color_btn-bolt-border {
+	background-color: $btn-bolt-border;
+}
+
+.color_btn-silent-danger-color {
+	background-color: $btn-silent-danger-color;
+}
+
+.color_btn-silent-danger-bg {
+	background-color: $btn-silent-danger-bg;
+}
+
+.color_btn-silent-danger-border {
+	background-color: $btn-silent-danger-border;
+}
+
+.color_btn-primary-color {
+	background-color: $btn-primary-color;
+}
+
+.color_btn-primary-bg {
+	background-color: $btn-primary-bg;
+}
+
+.color_btn-primary-border {
+	background-color: $btn-primary-border;
+}
+
+.color_btn-secondary-bg {
+	background-color: $btn-secondary-bg;
+}
+
+.color_btn-secondary-border {
+	background-color: $btn-secondary-border;
+}
+
+.color_btn-tertiary-bg {
+	background-color: $btn-tertiary-bg;
+}
+
+.color_btn-tertiary-border {
+	background-color: $btn-tertiary-border;
+}
+
+.color_dropdown-link-color {
+	background-color: $dropdown-link-color;
+}
+
+.color_dropdown-link-hover-color {
+	background-color: $dropdown-link-hover-color;
+}
+
+.color_dropdown-link-hover-bg {
+	background-color: $dropdown-link-hover-bg;
+}
+
+.color_panel-default-heading-bg {
+	background-color: $panel-default-heading-bg;
+}
+
+.color_panel-default-border {
+	background-color: $panel-default-border;
+}
+
+.color_table-border-color {
+	background-color: $table-border-color;
+}
+
+.color_table-bg-accent {
+	background-color: $table-bg-accent;
+}
+
+.color_pagination-color {
+	background-color: $pagination-color;
+}
+
+.color_pagination-active-bg {
+	background-color: $pagination-active-bg;
+}
+
+.color_pagination-active-border {
+	background-color: $pagination-active-border;
+}
+
+.color_nav-tabs-border-color {
+	background-color: $nav-tabs-border-color;
+}
+
+.color_nav-tabs-active-link-hover-border-color {
+	background-color: $nav-tabs-active-link-hover-border-color;
+}
+
+.color_nav-tabs-bg {
+	background-color: $nav-tabs-bg;
+}
+
+.color_filtertabs {
+	background-color: $filtertabs;
+}
+
+.color_filtertab-color {
+	background-color: $filtertab-color;
+}
+
+.color_filtertab-active-color {
+	background-color: $filtertab-active-color;
+}
+
+.color_sidebarbackground {
+	background-color: $sidebarbackground;
+}
+
+.color_sidebartextcolour {
+	background-color: $sidebartextcolour;
+}
+
+.color_sidebartextcolourcollapsed {
+	background-color: $sidebartextcolourcollapsed;
+}
+
+.color_sidebarlink {
+	background-color: $sidebarlink;
+}
+
+.color_sidebarlinkhover {
+	background-color: $sidebarlinkhover;
+}
+
+.color_sidebarlinkactive {
+	background-color: $sidebarlinkactive;
+}
+
+.color_sidebarbackgroundactive {
+	background-color: $sidebarbackgroundactive;
+}
+
+.color_sidebarbackgroundhover {
+	background-color: $sidebarbackgroundhover;
+}
+
+.color-swatch {
+	width: 100px;
+	height: 1.25em;
+	display: inline-block;
+	margin-right: 1em;
+	box-shadow: (1px 1px 3px #ccc);
+}
+
+.sg-color {
+	margin-bottom: 0.25rem;
+}
+
+.sg-section {
+	margin-bottom: 5rem;
+}
+
+#sg-patterns-bolt {
+	padding-top: 4rem;
+}
